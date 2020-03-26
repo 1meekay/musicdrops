@@ -1,12 +1,16 @@
+{% load static %}
+
 <html>
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="../styling/style.css" type="text/css">
+        <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Bebas+Neue|Berkshire+Swash|Cinzel|Courier+Prime|Cutive+Mono|Montserrat+Subrayada|Righteous|Six+Caps|Major+Mono+Display|Staatliches|UnifrakturMaguntia&display=swap" rel="stylesheet">
         <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <title>Music Drops</title>
+
+        <title>Music Drops</title>
     </head>
+
     <body class="sotw">
     <!-- <div id="border" >
         <div id="info">
@@ -22,19 +26,21 @@
         <div id="container">
             <div id="left">
                 <div class="header">
-                    <a id="sotw-home-button" href="index.html">Home</a>
-                    <a id="sotw-new-music-button" href="newmusic.html">New Music</a>
-                    <a id="sotw-sotw-button" href="sotw.html">Song of the Week</a>
-                    <a id="sotw-about-button" href="about.html">About</a>
+                    <a id="sotw-home-button" href="{% url 'home' %}">Home</a>
+                    <a id="sotw-new-music-button" href="{% url 'new_music' %}">New Music</a>
+                    <a id="sotw-sotw-button" href="{% url 'sotw' %}">Song of the Week</a>
+                    <a id="sotw-about-button" href="{% url 'about' %}">About</a>
                 </div>            
             </div>
+
             <div id="middle">
                 <h2 id="sotw-title" style="font-family: 'Major Mono Display', monospace;">Title: Alone Again</h2>
-                <figure>
-                    <img id="sotw-image" src="/images/theweeknd.jpg" alt="The Weeknd 'After Hours' album cover">
-                </figure>
+                    <figure>
+                        <img id="sotw-image" src="static/images/theweeknd.jpg" alt="The Weeknd 'After Hours' album cover">
+                    </figure>
                 <h2 style=" text-align:center; font-family: 'Major Mono Display', monospace;">Artist: The Weeknd</h2>
             </div>
+
             <div id="right">
                 <h3 style="text-align: center; font-family: Bebas Neue;">The Scoop</h3>
             </div>

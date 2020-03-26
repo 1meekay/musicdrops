@@ -1,0 +1,38 @@
+{% load static %}
+
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Bebas+Neue|Berkshire+Swash|Cinzel|Courier+Prime|Cutive+Mono|Montserrat+Subrayada|Righteous|Six+Caps|Staatliches|UnifrakturMaguntia&display=swap" rel="stylesheet">
+        <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+        <title>Music Drops Menu</title>
+    </head>
+
+    <body>
+        <div class="header">
+            <a id="home-button" href="{% url 'home' %}">Home</a>
+            <a id="new-music-button" href="{% url 'new_music' %}">New Music</a>
+            <a id="sotw-button" href="{% url 'sotw' %}">Song of the Week</a>
+            <a id="about-button" href="{% url 'about' %}">About</a>
+        </div>
+    </body>
+</html>
+
+<script>
+    $('a').hover(function() {
+        $('a').css({opacity: '0.7'});
+        $(this).css({opacity: '1'});
+    }, function() {
+        $('a').css({opacity: '1'})}
+    );
+
+    // $('.article-feed').infiniteScroll({
+    //   path: '.pagination__next',
+    //   append: '.article',
+    //   status: '.scroller-status',
+    //   hideNav: '.pagination',
+    // });
+</script>

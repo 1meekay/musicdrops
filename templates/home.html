@@ -1,22 +1,53 @@
-{% extends "base.html" %}
+{% load static %}
 
-{% block content %}
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Bebas+Neue|Berkshire+Swash|Cinzel|Courier+Prime|Cutive+Mono|Montserrat+Subrayada|Righteous|Six+Caps|Staatliches|UnifrakturMaguntia&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-    PUT STUFF HERE...
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    AND HERE..
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    AND HERE...
-    <hr>
+        <title>Music Drops</title>
+    </head>
 
-{% endblock %}
+    <body class="page">
+        <section class="welcome">
+          <h3 id="welcome"><span id="font">Music Drops</span>
+              <a id="menu-button" href="{% url 'menu' %}">
+                  <i class="fa fa-angle-double-right"></i>
+              </a>
+          </h3>
+        </section>
+    </body>
+</html>
+
+<script>
+  var urls = [
+      'static/images/drake.jpg',
+      'static/images/070shake.jpg',
+      'static/images/dojacat.jpg',
+      'static/images/dababy.jpg',
+      'static/images/khalid.jpg',
+      'static/images/riconasty1.jpg',
+      'static/images/nicki.jpg',
+      'static/images/travis.jpg',
+      'static/images/megan.jpg',
+      'static/images/cardi.jpg'];
+
+  var cout = 1;
+  $('.page').css({'background': 'url("' + urls[0] + '")'});
+  setInterval(function() {
+    $('.page').css({'background': 'url("' + urls[cout] + '")'});
+    cout == urls.length-1 ? cout = 0 : cout++;
+  }, 1500);
+
+  window.onresize = function(){
+    var img = document.getElementsByClassName('page');
+    img.style.width = "100%";
+  };
+
+// $('.page').css('background-image', 'url(' + 'thug.jpg' + ')');
+</script>
